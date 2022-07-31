@@ -1,13 +1,205 @@
 body {
   margin: 0;
+  padding: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: linear-gradient(
+      83.2deg,
+      rgba(150, 93, 233, 1) 10.8%,
+      rgba(99, 88, 238, 1) 94.3%
+    );
+    color: #fff;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* Header */
+
+.container {
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	color: #fff;
+}
+.header-bar {
+	position: relative;
+	width: 70%;
+	min-width: 300px;
+	height: 50px;
+	border: 10px solid transparent;
+	border-top: 10px solid #fffa;
+	border-left: 10px solid #fffa;
+	box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.25) inset;
+}
+.header-bar::after {
+	content: '';
+	position: absolute;
+	top: -10px;
+	right: -10px;
+	width: 30%;
+	height: 49px;
+	border: 10px solid transparent;
+	border-bottom: 10px solid #fffa;
+	border-right: 10px solid #fffa;
+	transition: 0.3s linear all;
+}
+.header-bar > .logo {
+	position: absolute;
+	top: calc(50% - 20px);
+	left: 10px;
+	transform: translateY(-50%);
+	color: #fffc;
+	font-family: 'Tahoma', cursive;
+	cursor: default;
+	user-select: none;
+}
+
+.slider-menu {
+	position: absolute;
+	top: 0;
+	right: 0;
+	display: flex;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	z-index: 1;
+}
+.slider-menu > li {
+	display: inline-flex;
+	padding: 14px;
+	margin-left: 2px;
+	font-family: 'Quicksand', sans-serif;
+	color: #fff;
+	cursor: pointer;
+	transition: 0.3s linear all;
+	user-select: none;
+}
+
+
+/* end of header  */
+
+
+/* style for App component */
+
+.main{
+  display: flex;
+  margin-top: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  width: 70%;
+  height: 300px;
+  background-color:#fff;
+  color: black;
+  border-radius: 10px;
+  box-shadow:black,10px;
+  flex-direction:column;
+}
+
+.main-header{
+  padding-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: 'Tahoma';
+}
+.convert{
+  display: flex;
+  flex-direction:row;
+  padding-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.arrows{
+  height: 60px;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+/* end of style for App */
+
+
+
+@media   (max-width:980px) {
+  
+  .arrows{
+    margin-left: 30px;
+    margin-right: 30px;
+  }
+
+  .input{
+    padding: 12px, 16px;
+  }
+
+}
+
+
+
+/* Style for exchange-block */
+.input{
+  background: #fff;
+  color: black;
+  font: inherit;
+  box-shadow: 6px 6px 10px 6px rgba(0, 0, 0 , .1);
+  border: 0;
+  outline: 0;
+  padding: 20px 18px;
+}
+
+
+.select-dropdown,
+.select-dropdown * {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  box-sizing: border-box;
+}
+.select-dropdown {
+  position: relative;
+  /* ficha */
+   padding-top: 3px;
+  /* end of ficha */
+  background-color: #ffffff;
+  border-radius: 1px;
+  height: 60px;
+  border-color: rgb(255, 255, 255);
+  box-shadow: 10px 10px 10px 1px rgba(0, 0, 0 , .1);
+}
+.select-dropdown select {
+  font-size: 1rem;
+  font-weight: normal;
+  max-width: 100%;
+  padding: 8px 24px 8px 10px;
+  border: none;
+  background-color: white;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+  appearance: none;
+}
+.select-dropdown select:active, .select-dropdown select:focus {
+  outline: none;
+  box-shadow: none;
+}
+.select-dropdown:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 8px;
+  width: 0;
+  height: 0;
+  margin-top: -2px;
+  border-top: 5px solid rgb(255, 255, 255);
+  border-right: 5px solid transparent;
+  border-left: 5px solid transparent;
+}
+
+
+
+/*end of style for exchange-block  */
