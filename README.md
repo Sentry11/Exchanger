@@ -1,8 +1,14 @@
-# Конвертер валют
-Приложение возможно улучшить переписав некоторые компоненты так как они влияют на ресурсозатраты(в виде запросов) и можно сделать приложение full responsive но в задании таких пунктов не было.
-Так как файлов мало то было решение не создавать для каждого компонента отдельный каталог и не создавать каждому компоненту файл стиля
-Все стили находяться в index.css. Использовал нативный css так как не знал можно ли юзать препроцесоры
+# Currency Converter
+<b>Testing project</b> <br/>
 ## Api - Fixer Api
-## Использовано - useState, useEffect, fetch, props
+## Used - useState, useEffect, fetch, props<br/>
+Requirements to this project:
+<li>You can't use class components
+<li>Need to use hooks
+<li>You can use only pure css
+<li>Need to use api </li>
+
+## Appearance
+
 
 
