@@ -1,10 +1,7 @@
 import React, { useEffect, useState } from 'react';
-
 import Exchancher from './exchange-block';
 import Header from './header';
 import arrows from '../src/image/transfer.png'
-
-
 
 let myHeaders = new Headers();
 myHeaders.append("apikey", "ZHkXS4xEUFtJhsJifSwQRKCl9OTABAZX");
@@ -15,9 +12,7 @@ let requestOptions = {
   headers: myHeaders
 };
 
-
 function App() {
-
   const [currencyOptions, setCurrencyOptions] = useState([])
   const [fromCurrency, setFromCurrency] = useState()
   const [toCurrency, setToCurrency] = useState()
@@ -27,8 +22,6 @@ function App() {
   const [usdToShow, setUsdToShow] = useState()
   const [eurToShow, setEurToShow] = useState()
 
-
-
   let toAmount, fromAmount
   if (amountInFromCurrency) {
     fromAmount = amount
@@ -37,8 +30,6 @@ function App() {
     toAmount = amount
     fromAmount = amount / exchangeRate
   }
-
-
 
 
   useEffect(() => {
@@ -52,6 +43,7 @@ function App() {
         setExchangeRate(data.rates[firstCurrency])
       })
 
+    
       // This fetch is optional, but if there are no restrictions on requests, it will be easier
     fetch("https://api.apilayer.com/fixer/latest?symbols=UAH&base=USD", requestOptions)
       .then(res => res.json())
@@ -69,9 +61,7 @@ function App() {
     // you can get both the dollar and the euro
     }, [])
 
-    
-
-
+  
   useEffect(() => {
     if (fromCurrency != null && toCurrency != null) {
       fetch(`https://api.apilayer.com/fixer/latest?symbols=${toCurrency}&base=${fromCurrency}`, requestOptions)
@@ -92,12 +82,8 @@ function App() {
   }
 
 
-
-
   return (
     <>
-
-      {/* {console.log(currencyToShow)} */}
       <Header usdToShow = {usdToShow} eurToShow = {eurToShow}/>
     
       <div className='main'>
